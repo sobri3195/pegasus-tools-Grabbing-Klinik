@@ -45,20 +45,24 @@ Jika project ini bermanfaat, Anda dapat mendukung pengembangan lebih lanjut mela
 
 ```
 clinic-grabber/
-├── backend/                 # Python Flask API
+├── src/                     # React source files
+│   ├── components/         # React components
+│   ├── App.jsx             # Main app component
+│   ├── App.css             # App styles
+│   ├── index.css           # Global styles
+│   └── main.jsx            # Entry point
+│
+├── backend/                # Python Flask API
 │   ├── app.py              # Main application
 │   ├── requirements.txt    # Python dependencies
 │   └── README.md           # Backend documentation
 │
-├── frontend/               # React Application
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── App.jsx         # Main app component
-│   │   └── index.css       # Styles
-│   ├── package.json        # Node dependencies
-│   ├── netlify.toml        # Netlify configuration
-│   └── README.md           # Frontend documentation
-│
+├── public/                 # Static assets
+├── dist/                   # Build output (generated)
+├── index.html              # HTML template
+├── package.json            # Node dependencies
+├── vite.config.js          # Vite configuration
+├── netlify.toml            # Netlify configuration
 └── README.md               # This file
 ```
 
@@ -85,22 +89,24 @@ clinic-grabber/
 
 ### Frontend Setup
 
-1. Navigate to frontend folder:
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Run development server:
+2. Run development server:
    ```bash
    npm run dev
    ```
 
    Frontend akan berjalan di `http://localhost:5173`
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+   Build output akan ada di folder `dist/`
 
 ## 📡 API Endpoints
 
@@ -195,27 +201,28 @@ git subtree push --prefix backend heroku main
 
 **Option 1: Netlify CLI**
 ```bash
-cd frontend
 npm run build
 netlify deploy --prod
 ```
 
-**Option 2: Git Auto-Deploy**
+**Option 2: Git Auto-Deploy (Recommended)**
 1. Push ke GitHub/GitLab
 2. Connect repository di Netlify
-3. Set build settings:
-   - Build command: `npm run build`
-   - Publish directory: `frontend/dist`
-   - Base directory: `frontend`
-4. Add environment variable:
+3. Netlify akan otomatis detect build settings dari `netlify.toml`
+4. Add environment variable di Netlify dashboard:
    - `VITE_API_URL`: URL backend API Anda
+5. Deploy akan otomatis berjalan setiap push ke main branch
 
 **Option 3: Manual Upload**
 ```bash
-cd frontend
 npm run build
 # Upload folder 'dist' ke Netlify dashboard
 ```
+
+**Konfigurasi Otomatis:**
+- Build command: `npm run build` (dari netlify.toml)
+- Publish directory: `dist` (dari netlify.toml)
+- Redirects untuk SPA sudah dikonfigurasi
 
 ## ⚙️ Konfigurasi
 
@@ -239,15 +246,16 @@ CORS(app, resources={
 
 ### Frontend API URL
 
-Edit `frontend/.env.production`:
+Edit `.env.production`:
 
 ```env
 VITE_API_URL=https://your-backend-api.herokuapp.com
 ```
 
-Atau set via Netlify Dashboard:
+Atau set via Netlify Dashboard (Recommended):
 1. Site settings → Environment variables
 2. Add `VITE_API_URL` dengan URL backend Anda
+3. Redeploy site untuk apply perubahan
 
 ## 🔧 Integrasi Google Places API (Opsional)
 
@@ -338,7 +346,7 @@ Edit `backend/app.py`, tambahkan ke array `MOCK_CLINICS`:
 
 **Customize UI:**
 
-Edit `frontend/src/index.css` untuk mengubah:
+Edit `src/index.css` untuk mengubah:
 - Colors
 - Layout
 - Animations

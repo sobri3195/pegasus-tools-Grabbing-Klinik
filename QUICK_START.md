@@ -56,10 +56,7 @@ python app.py
 Open new terminal:
 
 ```bash
-# Navigate to frontend
-cd frontend
-
-# Install dependencies
+# Install dependencies (in project root)
 npm install
 
 # Run dev server
@@ -122,10 +119,9 @@ Or click "Temukan Klinik Terdekat" to use GPS.
 2. Login with GitHub
 3. New site from Git
 4. Select repository
-5. Settings:
-   - Base directory: `frontend`
+5. Netlify akan otomatis detect settings dari `netlify.toml`:
    - Build command: `npm run build`
-   - Publish directory: `frontend/dist`
+   - Publish directory: `dist`
 6. Environment variable:
    - Key: `VITE_API_URL`
    - Value: Your backend URL
@@ -145,7 +141,7 @@ After deploying backend, update frontend:
 3. Try searching
 
 **Option 2: Via Code**
-1. Edit `frontend/.env.production`
+1. Edit `.env.production` in project root
 2. Set `VITE_API_URL=https://your-backend.railway.app`
 3. Rebuild: `npm run build`
 4. Redeploy to Netlify
@@ -227,7 +223,7 @@ Edit `backend/app.py` → `MOCK_CLINICS` array
 3. Set environment variable: `GOOGLE_PLACES_API_KEY`
 
 ### Customize UI
-Edit `frontend/src/index.css` for styling
+Edit `src/index.css` for styling
 
 ### Add Features
 See `FEATURES.md` for roadmap

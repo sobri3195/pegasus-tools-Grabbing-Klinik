@@ -34,9 +34,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # Frontend Build
-frontend/dist/
-frontend/build/
-frontend/.vite/
+dist/
+build/
+.vite/
 
 # Environment Variables
 .env
