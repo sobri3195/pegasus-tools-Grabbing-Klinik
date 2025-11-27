@@ -1,0 +1,114 @@
+┌─────────────────────────────────────────────────────────────┐
+│         🚀 NETLIFY DEPLOYMENT STRUCTURE                     │
+│                                                              │
+│  ✅ All files needed by Netlify are at ROOT level          │
+└─────────────────────────────────────────────────────────────┘
+
+clinic-grabber/ (ROOT - Netlify deploys from here)
+│
+├── 📄 index.html           ← Entry point (HTML template)
+├── 📦 package.json         ← Dependencies & scripts
+├── ⚙️  vite.config.js       ← Build configuration
+├── 🌐 netlify.toml         ← Netlify auto-config
+├── 🔐 .env.production      ← Production environment vars
+│
+├── 📁 src/                 ← React source code
+│   ├── App.jsx             ← Main component
+│   ├── App.css             ← App styles
+│   ├── index.css           ← Global styles
+│   ├── main.jsx            ← Entry point
+│   └── components/         ← React components
+│       ├── ClinicCard.jsx
+│       └── SearchSection.jsx
+│
+├── 📁 public/              ← Static assets
+│   └── .gitkeep
+│
+├── 📁 dist/                ← Build output (auto-generated)
+│   ├── index.html
+│   └── assets/
+│       ├── index-*.css
+│       └── index-*.js
+│
+├── 📁 backend/             ← Backend API (deploy separately)
+│   ├── app.py
+│   ├── requirements.txt
+│   └── ...
+│
+└── 📁 Documentation/
+    ├── README.md
+    ├── NETLIFY_DEPLOY.md
+    ├── DEPLOY_README.md
+    ├── QUICK_START.md
+    └── ...
+
+┌─────────────────────────────────────────────────────────────┐
+│  NETLIFY DEPLOYMENT FLOW                                    │
+└─────────────────────────────────────────────────────────────┘
+
+1. Git Push to main branch
+   │
+   ├──> Netlify detects changes
+   │
+2. Read netlify.toml (at root)
+   │
+   ├──> Build Command: npm run build
+   │
+3. Install dependencies (package.json at root)
+   │
+   ├──> npm install
+   │
+4. Build project (vite.config.js at root)
+   │
+   ├──> vite build
+   │
+5. Publish directory (dist/ at root)
+   │
+   ├──> Deploy dist/ contents to CDN
+   │
+6. ✅ Live at: https://your-app.netlify.app
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  BENEFITS OF THIS STRUCTURE                                 │
+└─────────────────────────────────────────────────────────────┘
+
+✅ Netlify auto-detects configuration
+✅ No need to specify base directory
+✅ Standard React/Vite project structure
+✅ Industry best practices
+✅ Easy for new developers
+✅ Clear separation (frontend root, backend subfolder)
+✅ One-click deployment
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  QUICK DEPLOY COMMANDS                                      │
+└─────────────────────────────────────────────────────────────┘
+
+# Local build test
+npm install
+npm run build
+
+# Manual deploy
+netlify deploy --prod
+
+# Git auto-deploy
+git push origin main
+→ Auto-deploys to Netlify! 🚀
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  ENVIRONMENT VARIABLES                                      │
+└─────────────────────────────────────────────────────────────┘
+
+Set in Netlify Dashboard:
+→ VITE_API_URL = https://your-backend-url.com
+
+Or edit .env.production:
+→ VITE_API_URL=https://your-backend-url.com
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  STATUS: ✅ READY FOR DEPLOYMENT                            │
+└─────────────────────────────────────────────────────────────┘

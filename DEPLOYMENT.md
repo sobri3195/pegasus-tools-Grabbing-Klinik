@@ -131,7 +131,6 @@ Backend akan tersedia di: `https://clinic-grabber-api.herokuapp.com`
 
 1. **Build Frontend Locally**
    ```bash
-   cd frontend
    npm install
    npm run build
    ```
@@ -162,8 +161,6 @@ npm install -g netlify-cli
 #### Deploy
 
 ```bash
-cd frontend
-
 # Login
 netlify login
 
@@ -203,9 +200,9 @@ netlify env:set VITE_API_URL https://your-backend-api.herokuapp.com
    - Select GitHub repository
 
 3. **Configure Build Settings**
-   - Base directory: `frontend`
    - Build command: `npm run build`
-   - Publish directory: `frontend/dist`
+   - Publish directory: `dist`
+   - (Netlify akan otomatis detect dari netlify.toml)
 
 4. **Set Environment Variables**
    - Click "Add environment variables"
@@ -432,8 +429,8 @@ git push heroku `git subtree split --prefix backend main`:main --force
 ### Update Frontend
 
 ```bash
-# Make changes
-git add frontend/
+# Make changes to src/ files
+git add .
 git commit -m "Update frontend"
 git push
 

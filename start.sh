@@ -41,12 +41,10 @@ python app.py &
 BACKEND_PID=$!
 echo "Backend running on PID: $BACKEND_PID"
 
-cd ..
-
 # Setup Frontend
 echo ""
 echo "🌐 Setting up Frontend..."
-cd frontend
+cd ..
 
 if [ ! -d "node_modules" ]; then
     echo "Installing npm dependencies..."
