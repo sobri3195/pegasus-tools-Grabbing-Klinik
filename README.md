@@ -2,6 +2,35 @@
 
 Sistem pencarian klinik terdekat dengan informasi kontak lengkap (telepon, WhatsApp, email) tanpa menggunakan database. Backend Python menyediakan data secara real-time, dan frontend React dapat di-deploy ke Netlify.
 
+## 👨‍⚕️ Author
+
+**Lettu Kes dr. Muhammad Sobri Maulana, S.Kom, CEH, OSCP, OSCE**
+
+- 🌐 GitHub: [github.com/sobri3195](https://github.com/sobri3195)
+- 📧 Email: [muhammadsobrimaulana31@gmail.com](mailto:muhammadsobrimaulana31@gmail.com)
+- 🌍 Website: [muhammadsobrimaulana.netlify.app](https://muhammadsobrimaulana.netlify.app)
+- 🛒 Toko Online: [Pegasus Shop](https://pegasus-shop.netlify.app)
+
+### 📱 Social Media
+
+- 🎥 YouTube: [@muhammadsobrimaulana6013](https://www.youtube.com/@muhammadsobrimaulana6013)
+- 📱 TikTok: [@dr.sobri](https://www.tiktok.com/@dr.sobri)
+- ✈️ Telegram: [winlin_exploit](https://t.me/winlin_exploit)
+- 💬 WhatsApp Group: [Join Here](https://chat.whatsapp.com/B8nwRZOBMo64GjTwdXV8Bl)
+
+### 💰 Support & Donation
+
+Jika project ini bermanfaat, Anda dapat mendukung pengembangan lebih lanjut melalui:
+
+- 💳 Lynk: [lynk.id/muhsobrimaulana](https://lynk.id/muhsobrimaulana)
+- ☕ Trakteer: [trakteer.id/g9mkave5gauns962u07t](https://trakteer.id/g9mkave5gauns962u07t)
+- 🎨 Gumroad: [maulanasobri.gumroad.com](https://maulanasobri.gumroad.com/)
+- 💝 KaryaKarsa: [karyakarsa.com/muhammadsobrimaulana](https://karyakarsa.com/muhammadsobrimaulana)
+- 🎁 Nyawer: [nyawer.co/MuhammadSobriMaulana](https://nyawer.co/MuhammadSobriMaulana)
+- 🌐 Sevalla: [muhammad-sobri-maulana-kvr6a.sevalla.page](https://muhammad-sobri-maulana-kvr6a.sevalla.page/)
+
+---
+
 ## 📋 Fitur Utama
 
 ✅ **Tanpa Database** - Data diambil secara real-time setiap request  
@@ -9,7 +38,7 @@ Sistem pencarian klinik terdekat dengan informasi kontak lengkap (telepon, Whats
 ✅ **Pencarian Terdekat** - Gunakan GPS untuk menemukan klinik terdekat  
 ✅ **Informasi Kontak Lengkap** - Telepon, WhatsApp, Email, dan Maps  
 ✅ **Tombol Aksi Langsung** - Call, WhatsApp, Email, dan buka Maps  
-✅ **Responsive Design** - Tampilan optimal di semua perangkat  
+✅ **Responsive Design** - Tampilan optimal di semua perangkat (Mobile, Tablet, Desktop)  
 ✅ **Deploy ke Netlify** - Frontend 100% statis, siap deploy  
 
 ## 🏗️ Struktur Project
@@ -315,6 +344,21 @@ Edit `frontend/src/index.css` untuk mengubah:
 - Animations
 - Responsive breakpoints
 
+## 📱 Mobile Responsive
+
+Aplikasi ini telah dioptimalkan untuk berbagai ukuran layar:
+
+- 📱 **Mobile (< 480px)**: Layout single column, font size optimal, touch-friendly buttons
+- 📱 **Tablet (481px - 768px)**: Layout 1-2 columns, balanced spacing
+- 💻 **Desktop (> 768px)**: Multi-column grid layout, full features
+
+Fitur responsive:
+- Flexible grid system
+- Scalable typography
+- Touch-optimized buttons (minimum 44x44px)
+- Adaptive spacing and padding
+- Mobile-first approach
+
 ## 🐛 Troubleshooting
 
 ### CORS Error
@@ -384,11 +428,12 @@ Contributions are welcome! Please:
 
 Jika ada pertanyaan atau issue:
 1. Open an issue di GitHub
-2. Check dokumentasi di folder `backend/` dan `frontend/`
-3. Review API endpoints di Postman
+2. Contact via email: muhammadsobrimaulana31@gmail.com
+3. Join WhatsApp Group untuk diskusi
 
 ## 🎯 Roadmap
 
+- [x] Responsive design untuk semua device
 - [ ] Integrasi dengan Google Places API
 - [ ] Filter berdasarkan kategori klinik
 - [ ] Rating dan review klinik
@@ -399,4 +444,6 @@ Jika ada pertanyaan atau issue:
 
 ---
 
-**Dibuat dengan ❤️ untuk memudahkan pencarian klinik terdekat**
+**Dibuat dengan ❤️ oleh dr. Muhammad Sobri Maulana untuk memudahkan pencarian klinik terdekat**
+
+**Support the project:** [Donate Here](https://lynk.id/muhsobrimaulana) ☕

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,6 +17,12 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: 20px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
 }
 
 .app {
@@ -77,8 +87,11 @@ body {
   transition: all 0.3s;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   white-space: nowrap;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -161,7 +174,7 @@ body {
 
 .clinic-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
   gap: 25px;
 }
 
@@ -247,6 +260,9 @@ body {
 
 .contact-value {
   color: #2d3748;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  flex: 1;
 }
 
 .clinic-actions {
@@ -270,6 +286,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .action-call {
@@ -372,6 +390,14 @@ body {
     font-size: 2rem;
   }
 
+  .header p {
+    font-size: 1rem;
+  }
+
+  .search-section {
+    padding: 20px;
+  }
+
   .search-box {
     flex-direction: column;
   }
@@ -380,11 +406,114 @@ body {
     min-width: 100%;
   }
 
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
   .clinic-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .clinic-card {
+    padding: 20px;
+  }
+
+  .clinic-name {
+    font-size: 1.2rem;
+  }
+
+  .clinic-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .results-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .search-section {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .clinic-card {
+    padding: 15px;
+  }
+
+  .clinic-name {
+    font-size: 1.1rem;
+  }
+
+  .clinic-category {
+    font-size: 0.8rem;
+  }
+
+  .clinic-address {
+    font-size: 0.85rem;
+  }
+
+  .contact-item {
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+  }
+
+  .contact-label {
+    min-width: 70px;
   }
 
   .clinic-actions {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .action-btn {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .empty-state {
+    padding: 40px 15px;
+  }
+
+  .empty-state-icon {
+    font-size: 3rem;
+  }
+
+  .empty-state h3 {
+    font-size: 1.2rem;
+  }
+
+  .empty-state p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .clinic-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
